@@ -1,0 +1,47 @@
+<!doctype html><!--文档头信息-->
+<html lang="en"><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记十九（一）-4</title><!--网站标题-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        body{
+            background: gray;
+        }
+        #box{
+            width: 300px;
+            height: 150px;
+            background-color: purple;
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // 做项目时一定要获取
+    box.onmousedown = function (e) {
+        e = e || event;
+        let x = e.clientX - this.offsetLeft;
+        let y = e.clientY - this.offsetTop;
+        document.onmousemove = function (e) {
+            e = e || event;
+            box.style.cssText = 'left:'+(e.clientX-x)+'px;top:'+(e.clientY-y)+'px';
+        }
+        document.onmouseup = function () {
+            document.onmousemove = document.onmouseup = null;
+        }
+    }
+</script>
+</body>
+</html>
+

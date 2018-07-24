@@ -1,0 +1,55 @@
+<!doctype html><!--文档头信息-->
+<html lang="en"><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记十九（一）-4</title><!--网站标题-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            background: url("img/bg.jpg");
+            background-size: 100% 100%;
+            overflow: hidden;
+            display: flex;
+        }
+        #box{
+            width: 800px;
+            height: 150px;
+            background: rgba(255,255,255,0.5);
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //        1G = 1024M
+    //        1M = 1024KB
+    //        1KB = 1024字节
+    // H5高级部分是用不到 CSS3部分的东西
+    box.ondragover = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+    box.ondrop=function (e) {
+        // 阻止跳转页面
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(e.dataTransfer.files[0].name);
+        console.log(e.dataTransfer.files[0].type);
+        console.log(parseInt(e.dataTransfer.files[0].size/1024)+'KB')
+    }
+
+</script>
+</body>
+</html>
+
