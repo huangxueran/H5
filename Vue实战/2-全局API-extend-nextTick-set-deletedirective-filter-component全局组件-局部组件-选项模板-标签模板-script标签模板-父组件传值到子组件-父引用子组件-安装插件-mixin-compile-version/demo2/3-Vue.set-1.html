@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <ol>
+        <li v-for="item in arr">{{item}}</li>
+    </ol>
+</div>
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data(){
+                return{
+                    msg:"hello",
+                    arr:['a','b','c']
+                }
+            }
+        })
+    </script>
+</body>
+</html>

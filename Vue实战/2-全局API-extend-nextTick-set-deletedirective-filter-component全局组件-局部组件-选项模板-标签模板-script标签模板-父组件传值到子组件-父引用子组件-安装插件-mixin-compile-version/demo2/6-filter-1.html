@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<!--
+     Vue.directive 自定义指令
+ -->
+<div id="app">
+    <h1>{{msg}}</h1>
+</div>
+    <script>
+        // 在选项中使用
+        let app=new Vue({
+            el:"#app",
+            data: {
+                msg: 'Vue.filter 过滤器'
+            }
+        })
+    </script>
+</body>
+</html>

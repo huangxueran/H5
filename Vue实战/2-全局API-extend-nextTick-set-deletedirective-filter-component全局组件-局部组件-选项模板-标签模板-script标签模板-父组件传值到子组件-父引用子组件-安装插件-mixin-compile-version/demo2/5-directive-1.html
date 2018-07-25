@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<!--
+     Vue.directive 自定义指令
+ -->
+<div id="app">
+    <h1>{{msg}}</h1>
+    <h2 v-dream="custom"></h2>
+</div>
+    <script>
+        Vue.directive("dream",function (el,bind) {
+            console.log(el);
+            console.log(bind)
+        });
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"Vue.diective",
+                custom:"hotpink"
+            },
+        })
+    </script>
+</body>
+</html>
