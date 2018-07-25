@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        .container{
+            font-size: 20px;
+            color: purple;
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2>{{msg}}</h2>
+    <h1-happy>
+        <span slot="name">{{con.name}}</span>
+        <span slot="age">{{con.age}}</span>
+        <span slot="job">{{con.job}}</span><!--span表示用来组合文档中的行内元素-->
+    </h1-happy>
+</div>
+<template id="tpl">
+    <div class="container">
+        <header>
+            <h1>我是: <slot name="name"></slot></h1>
+        </header>
+        <main>
+            年龄: <slot name="age"></slot>
+        </main>
+        <footer>
+            <p>job: <slot name="job"></slot></p>
+        </footer>
+    </div>
+</template>
+<script>
+
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'用于标记往哪个具名插槽中插入子组件内容。会在第三方组件上看到有slot属性',
+            con:{
+                name:'快乐',
+                age:18,
+                job:'未知'
+            }
+        },
+        components:{ // 声明组件
+            'h1-happy': {
+                template: '#tpl'
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2>{{msg}}</h2>
+    <em>{{price}}</em>
+    <input type="button" value="add" @click="add(5)">
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data: {
+            price:199,
+            msg: 'methods'
+        },
+        methods: {
+            add(e){
+                    console.log(e);
+                }
+            }
+    })
+</script>
+</body>
+</html>

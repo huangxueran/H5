@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2>{{msg}}-{{num}}</h2>
+    <input type="button" value="add" @click="add"></input>
+</div>
+<script>
+
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'实例方法/事件',
+            num:0
+        },
+        methods:{
+            add(){
+                this.num++
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2>{{msg}}</h2>
+    <base-layout>
+        <span slot="header">{{con.header}}</span>
+        <span slot="p">{{con.p}}</span>
+        <span slot="footer">{{con.footer}}</span><!--span表示用来组合文档中的行内元素-->
+    </base-layout>
+</div>
+<template id="tpl">
+    <div class="container">
+        <header>
+            描述: <slot name="header"></slot>
+        </header>
+        <main>
+            内容: <slot name="p"></slot>
+        </main>
+        <footer>
+            信息: <slot name="footer"></slot>
+        </footer>
+    </div>
+</template>
+<script>
+
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'用于标记往哪个具名插槽中插入子组件内容。会在第三方组件上看到有slot属性',
+            con:{
+                header:"Here might be a page title",
+                p:"A paragraph for the main content or And another one.",
+                footer:"Here's some contact info"
+            }
+        },
+        components:{ // 声明组件
+            'base-layout': {
+                template: '#tpl'
+            }
+        }
+    })
+</script>
+</body>
+</html>

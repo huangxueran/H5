@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2>{{msg}}</h2>
+    <em>{{price}}</em>
+    <input type="button" value="在Vue作用域下调用add函数" @click="add(5,$event)">
+
+</div>
+<button onclick="vm.add(5,this)">在外部调用vue的里的方法</button>
+
+<script>
+    let vm=new Vue({
+        el:"#app",
+        data: {
+            price:199,
+            msg: 'methods'
+        },
+        methods: {
+            add(n,e){
+                    console.log(n,e);
+                }
+            }
+    })
+</script>
+</body>
+</html>
