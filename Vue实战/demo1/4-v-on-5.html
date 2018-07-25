@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--把数据插入到app作用域下，需要 用 插值符号 {{ 变量 }}  ${变量}-->
+    <h2 v-text="msg"></h2>
+    <hr>
+    <h1> 得分：{{num}} </h1>
+    <button v-on:click="addition">加分</button>
+    <button v-on:click="subtraction">减分</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    // MVVM
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'v-on',
+            num:0
+        },
+        methods:{
+            addition:function (e) {
+                console.log(e,this )
+            },
+            subtraction(){
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html><!--文档头信息-->
+<html lang="en"><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <title>整理笔记十九（一）-4</title><!--网站标题 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--把数据插入到app作用域下，需要 用 插值符号 {{ 变量 }}  ${变量}-->
+         <h2 v-text="msg"></h2>
+</div>
+    <script src="../js/vue.js"></script>
+    <script>
+        //MVVM
+        new Vue({
+            el:"#app",
+            data:{
+                // 我们请求过来的原始数据 都会放到 data，
+                msg:"v-if"
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html><!--文档头信息-->
+<html lang="en"><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <title>整理笔记十九（一）-4</title><!--网站标题 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--把数据插入到app作用域下，需要 用 插值符号 {{ 变量 }}  ${变量}-->
+    <h2 v-text="msg"></h2>
+    <hr>
+    <ol>
+        <li v-for="item in arr">{{item}}</li>
+    </ol>
+    <hr>
+    <ol>
+        <li v-for="(item,index) in arr" :key="index">{{item}}</li>
+    </ol>
+    <hr>
+    <ol>
+        <li v-for="(item,index) in users" :key="index">name:{{item.name}} age:{{item.age}}</li>
+    </ol>
+    <hr>
+    <ol>
+        <li v-for="(value,key,index) in userName" :key="index">
+            value: {{value}},
+            key: {{key}},
+            index: {{index}}
+        </li>
+    </ol>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    //MVVM
+    new Vue({
+        el:"#app",
+        data:{
+            // 我们请求过来的原始数据 都会放到 data，
+            msg:'v-for',
+            arr:[123,456,789],
+            users:[
+                {name:"快乐1",age:11},
+                {name:"快乐2",age:12},
+                {name:"快乐3",age:13},
+            ],
+            userName:{
+                name:"快乐4",
+                age:14,
+                sex:"男"
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html><!--文档头信息-->
+<html lang="en"><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <title>整理笔记十九（一）-4</title><!--网站标题 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--把数据插入到app作用域下，需要 用 插值符号 {{ 变量 }}  ${变量}-->
+        {{abc123}}
+         <h2 v-text="vText"></h2>
+        <h2 v-text="vText2"></h2>
+        <h2 v-html="vHtml"></h2>
+        <hr>
+        <h2 v-show="isShow">{{vHtml}}</h2>
+
+</div>
+    <script src="../js/vue.js"></script>
+    <script>
+        //MVVM
+        new Vue({
+            el:"#app",
+            data:{
+                // 我们请求过来的原始数据 都会放到 data，
+                abc123:"helloworld",
+                vText:"这是v-text,相当于innerText",
+                vText2:`<em>这是v-text</em>,<i>相当于innerHTML</i>`,
+                vHtml:`<em>这是v-text</em>,<i>相当于innerHTML</i>`,
+                isShow:false
+            }
+        })
+    </script>
+</body>
+</html>
