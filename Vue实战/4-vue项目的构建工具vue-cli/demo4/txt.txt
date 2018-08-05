@@ -33,5 +33,17 @@ vue -V
 
 先cd 到项目文件夹
 vue init webpack 你的项目文件夹
+-----------------------------------------------------------
+    别安装
+    esline testing n
+    Unit testing n
+    e2e testing n
+-----------------------------------------------------------
+file ->setting ->directoir ->exclude 排除 noe_moudeles文件
+开启 node 核心库
+   好处 有提示 有语法高亮度提示，有语法检测
+   enabled
+   安装vue语法检测插件
+   file ->setting ->plugin->browse搜索vue.js
 
 
