@@ -1,0 +1,37 @@
+ 会用到vue全家桶
+ vue vue-cli axios vue-router vue-vueX
+ vue-cli
+    脚手架
+        一个基于vue的构建工具
+        搭建vue项目的环境
+    好处
+        兼容
+        方便
+        快速
+
+    可以不用 脚手架（vue-cli）
+    就可以基于 webpack 打包工具 ，要自己去进行配置
+    各个版本兼容问题
+    前端 有一个[配置工程师]
+
+    下载
+        模块管理工具, 下载模块
+        npm
+        cnpm
+        yarn
+    下载任何模块都可以在 npm官网上搜索得到
+
+    先下载node
+
+        node -v
+        npm -v
+    最好配置一下淘宝镜像
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+
+    https://www.npmjs.com/package/vue-cli
+
+     cnpm install -g vue-cli
+
+     vue -V
+

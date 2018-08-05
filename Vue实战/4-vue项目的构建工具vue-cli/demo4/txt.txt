@@ -46,4 +46,6 @@ file ->setting ->directoir ->exclude 排除 noe_moudeles文件
    安装vue语法检测插件
    file ->setting ->plugin->browse搜索vue.js
 
+   dir表示查看文件
 
+   ctrl+c表示返回
