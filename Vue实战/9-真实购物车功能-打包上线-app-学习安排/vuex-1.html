@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/vuex/dist/vuex.js"></script>
+
+</head>
+  <body>
+         <div id="app">
+             <con></con>
+             <button @click="add">add</button>
+         </div>
+         <script>
+             let con = {
+                 template:`
+                     <div>
+                         <h2>{{num}}</h2>
+                         <h2>{{title}}</h2>
+                         <h2>{{changeGetter}}</h2>
+                     </div>
+                 `,
+                 computed:{
+                     num(){
+                         return this.$store.state.num
+                     },
+                     title(){
+                         return this.$store.state.title
+                     },
+                     changeGetter(){
+                         return this.$store.getters.changeGetter
+                     }
+                 }
+             }
+             let store = new Vuex.Store({
+                 state:{
+                     num:1,
+                     title:''
+                 },
+                 getters:{   // 扩展
+                     changeGetter(state){
+                         return state.num = 404
+                     }
+                 },
+                 mutations:{ // 定义你将来 要做的事情
+                     increment(state,i){
+                         state.num +=i
+                     },
+                     title(state,str){
+                         state.title = str;
+                     }
+                 },
+                 actions:{
+                     titleAction(context,str){   // 用dispatch
+                         context.commit('title',str)
+                     }
+                 }
+
+             })
+             new Vue({
+                 el:'#app',
+                 store,
+                 components:{
+                     con
+                 },
+                 methods:{
+                     add(){
+                         // 提交 mutations的increment事件函数
+                         this.$store.commit('increment',1)
+                         this.$store.dispatch('titleAction','18期H5真给力！！！')
+                     }
+                 }
+             })
+         </script>
+     </body>
+     </html>
